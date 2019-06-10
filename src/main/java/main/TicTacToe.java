@@ -7,20 +7,62 @@ public static int[][] ticbox;
 	public static int win(int [][]tic) {
 		//check all rows
 		//loop through rows from 0 to 3 and check if all the 3 places have same marks
- 		
-		
+		int k=0;
+ 		for(int i=0;i<3;i++)
+ 		{
+ 			int j=0;
+ 				if(tic[i][j]==tic[i][j+1]&&tic[i][j]!=0)
+ 				{
+ 					if(tic[i][j]==tic[i][j+2])
+ 					{
+ 						k=1;
+ 					}
+ 				}
+ 		}
 		//check all cols
 		//loop through columns from 0 to 3 and check if all the 3 places have same marks
- 		
+ 		for(int i=0;i<3;i++)
+ 		{
+ 			int j=0;
+ 				if(tic[j][i]==tic[j+1][i]&&tic[j][1]!=0)
+ 				{
+ 					if(tic[j][i]==tic[j+2][i])
+ 					{
+ 						k=1;
+ 					}
+ 				}
+ 		}
 		//check both diagonals 
-		
-		
+ 		for(int i=0;i<1;i++)
+ 		{
+ 				if(tic[i][i]==tic[i+1][i+1]&&tic[i][i]!=0)
+ 				{
+ 					if(tic[i][i]==tic[i+2][i+2])
+ 					{
+ 						k=1;
+ 					}
+ 				}
+ 		}
+ 		for(int i=2;i<3;i++)
+ 		{
+ 				if(tic[i][i]==tic[i-1][i-1]&&tic[i][i]!=0)
+ 				{
+ 					if(tic[i][i]==tic[i-2][i-2])
+ 					{
+ 						k=1;
+ 					}
+ 				}
+ 		}
 		
 		//write your code here !!!
-		
-		
-		
-		return 0;
+		if(k==0)
+		{
+		    return 0;
+		}
+		else
+		{
+			return 1;
+		}
 		
 	}
 	
@@ -34,15 +76,18 @@ public static int[][] ticbox;
 	}
 	public static boolean validate(int a1,int a2,int [][] tic) {
 		//check if a1 is between 0 & 3
+		if(a1>=0&&a1<3&&a2>=0&&a2<3)
+		{
+			if(tic[a1][a2]==0)
+			{
+				return true;
+			}
+		}
 		//check if a2 is between 0 & 3
 		//check if the selected box is empty ie, already not marked by other player
 		//if all checks passed return true.
-		
-		
-		//Write your code here !!!
-		
-		
 		return false;
+				//Write your code here !!!
 	}
 	public static void main(String args[]) {
 		

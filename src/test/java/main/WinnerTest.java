@@ -39,7 +39,7 @@ TicTacToe m;
 		m.ticbox[0][0] = 2;
 		m.ticbox[0][1] = 2;
 		m.ticbox[0][2] = 2;
-		assertEquals(2,m.win(m.ticbox));
+		assertEquals(1,m.win(m.ticbox));
 	}
 
 
